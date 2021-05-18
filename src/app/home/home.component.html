@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span>Mod</span>
+  <button mat-raised-button type="button" class="btn btn-info" (click)="onLogOut()">
+    Logout
+  </button>
+</mat-toolbar>
+  
+<mat-card *ngFor="let property of properties" (click)="goToProperty(property)">
+  <mat-card-content>
+    <mat-icon mat-card-avatar>home</mat-icon>
+    <mat-card-title>{{property.address}}</mat-card-title>
+  </mat-card-content>
+</mat-card>    

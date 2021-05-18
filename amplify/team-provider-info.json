@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-formgeneration-dev-14226-authRole",
+            "UnauthRoleArn": "arn:aws:iam::458245674036:role/amplify-formgeneration-dev-14226-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::458245674036:role/amplify-formgeneration-dev-14226-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-formgeneration-dev-14226-deployment",
+            "UnauthRoleName": "amplify-formgeneration-dev-14226-unauthRole",
+            "StackName": "amplify-formgeneration-dev-14226",
+            "StackId": "arn:aws:cloudformation:eu-west-2:458245674036:stack/amplify-formgeneration-dev-14226/f0763c00-b771-11eb-bd02-0ac1364244c2",
+            "AmplifyAppId": "d2hloet57jpmlo"
+        },
+        "categories": {
+            "auth": {
+                "formgeneration9f6dea0a": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2hloet57jpmlo",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

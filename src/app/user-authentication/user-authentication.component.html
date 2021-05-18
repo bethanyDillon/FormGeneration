@@ -1,0 +1,65 @@
+<div class="sign-methods">
+    <li>
+        <button (click)="onSignUp()">SignUp</button>
+    </li>
+    <li>
+        <button (click)="onSignIn()">SignIn</button>
+    </li>
+</div>
+
+<!-- User Sign up -->
+
+<div class="row sign-up row-center" *ngIf="signstatus == 'signup'">
+    <div class="form-group">
+        <label for="exampleInputEmail">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" #email>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputContact">Full name</label>
+        <input type="text" class="form-control" id="exampleInputContact" placeholder="Enter name" #name>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" #password>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputAuthCode">Organisation authorisation code</label>
+        <input type="text" class="form-control" id="exampleInputAuthCode" placeholder="Auth Code" #authCode>
+      </div>
+      <div class="form-group">
+        <label for="exampleAccountType">Account type</label>
+        <select (change)="accountTypeChangeHandler($event)" #accountType>
+            <option *ngFor="let accountType of accountTypes" value={{accountType}}>
+              {{accountType}}
+            </option>
+          </select>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="signUpToAWS(email,name,password,authCode)">Sign Up</button>
+</div>
+    
+<!-- User Sign In -->
+
+<div class="row sign-in row-center" *ngIf="signstatus == 'signin'">
+    <div class="form-group">
+        <label for="exampleInputEmail">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" #email>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" #password>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="signInToAWS(email, password)">Sign In</button>
+</div>
+    
+<!-- Email verification -->
+    
+<div class="row row-center" *ngIf="toVerifyEmail">
+    <div class="form-group">
+        <label for="exampleInputverifycode">Verifiacation Code</label>
+        <input type="number" class="form-control" id="exampleInputverifycode" aria-describedby="verifyCodeHelp" placeholder="Enter the code" #verifycode>
+        <small id="emailHelp" class="form-text text-muted">Please enter the verification code that we sent to your email</small>
+      </div>
+      <button type="button" class="btn btn-success" (click)="onVerify(verifycode)">Verify</button>
+</div>
